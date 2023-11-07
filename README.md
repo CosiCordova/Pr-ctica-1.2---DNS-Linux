@@ -19,6 +19,6 @@ Posteriormente nos dirijimos a:
 
 Donde configuramos los archivos de la siguiente forma:
 
-[named.conf] (https://github.com/CosiCordova/Configuraci-n-cliente-servidor-DNS-/blob/main/conf/named.conf)
+[named.conf](https://github.com/CosiCordova/Configuraci-n-cliente-servidor-DNS-/blob/main/conf/named.conf)
 
 
