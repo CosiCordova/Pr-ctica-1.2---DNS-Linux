@@ -67,3 +67,5 @@
  ```sh 
  dig @10.0.2.15 ns.asircastelao.int
  ```
+
+ Para terminar tambien se puede comprobar poniendo adptador puente a la maquina virtual y haciendo un dig a la ip de el ordenador principal.
