@@ -1,61 +1,69 @@
-# Pr-ctica-1.2---DNS-Linux
+# Practica-1.2---DNS-Linux
 
-1. Primero se en una maquina virtual Ubuntu Server LTS descargamos dns y las herramintas de dig con los siguinetes comandos:
+## 1. Instalar DNS y Herramientas
 
-Para instalar dns
-```sh 
-apt install bind9
-```
+ Primero se en una maquina virtual Ubuntu Server LTS descargamos dns y las herramintas de dig con los siguinetes comandos:
 
-Para instalar las herraminetas
+ Para instalar dns
+ ```sh 
+ apt install bind9
+ ```
 
-```sh 
-apt install dnsutils
-```
+ Para instalar las herraminetas
 
-2. Posteriormente nos dirijimos a:
+ ```sh 
+ apt install dnsutils
+ ```
 
-´/Ubuntu/etc/bind ´
+## 2. Configuración de Archivos
 
-Donde configuramos los [archivos](https://github.com/CosiCordova/DNS---docker-compose---Git/tree/main/conf) de la siguiente forma:
+ Posteriormente nos dirijimos a:
 
-[named.conf](https://github.com/CosiCordova/Configuraci-n-cliente-servidor-DNS-/blob/main/conf/named.conf)
+ */Ubuntu/etc/bind*
 
-[named.conf.default.zones](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.default.zones)
+ Donde configuramos los [archivos](https://github.com/CosiCordova/DNS---docker-compose---Git/tree/main/conf) de la siguiente forma:
 
-[named.conf.local](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.local)
+ - [named.conf](https://github.com/CosiCordova/Configuraci-n-cliente-servidor-DNS-/blob/main/conf/named.conf)
 
-[named.conf.options](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.options)
+ - [named.conf.default.zones](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.default.zones)
 
-Luego nos dirigimos a:
+ - [named.conf.local](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.local)
 
-´/Ubuntu/var/lib/bind ´
+ - [named.conf.options](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/conf/named.conf.options)
 
-Y colocamos la siguinete configuracion:
+ Luego nos dirigimos a:
 
-[db.asircastelao.int](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/zonas/db.asircastelao.int)
+ */Ubuntu/var/lib/bind*
 
-3. Para iniciar al servidor nos dirijimos a la terminal y colocamos:
+ Y colocamos la siguinete configuracion:
 
-```sh 
-systemctl start bind9
-```
-Una vez iniciado el servidor para poder comprobar el estado de nuestro servidor utilizamos:
+ - [db.asircastelao.int](https://github.com/CosiCordova/DNS---docker-compose---Git/blob/main/zonas/db.asircastelao.int)
 
-```sh 
-systemctl status bind9
-```
+## 3. Iniciar el Servidor
 
-Para parar el servidor utilizamos:
+ Para iniciar al servidor nos dirijimos a la terminal y colocamos:
 
-```sh 
-systemctl stop bind9
-```
+ ```sh 
+ systemctl start bind9
+ ```
+ Una vez iniciado el servidor para poder comprobar el estado de nuestro servidor utilizamos:
 
-Una vez aqui el servidor deberia colocar en el apartado de "Active" "active (running)", cabe destacar que no deberia haber nada de color rojo.
+ ```sh 
+ systemctl status bind9
+ ```
 
-4. Para realizar el comando dig y comprobar el funcionamineto del servidor realizamos el siguinete comando:
+ Para parar el servidor utilizamos:
 
-```sh 
-dig @10.0.2.15 ns.asircastelao.int
-```
+ ```sh 
+ systemctl stop bind9
+ ```
+
+ Una vez aqui el servidor deberia colocar en el apartado de "Active" "active (running)", cabe destacar que no deberia haber nada de color rojo.
+
+## 4. Comprobar el Funcionamiento
+
+ Para realizar el comando dig y comprobar el funcionamineto del servidor realizamos  el siguinete comando:
+
+ ```sh 
+ dig @10.0.2.15 ns.asircastelao.int
+ ```
