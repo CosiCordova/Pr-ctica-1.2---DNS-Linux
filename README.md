@@ -2,4 +2,5 @@
 
 Primero se en una maquina virtual Ubuntu Server LTS descargamos bind y las herramintas de dig con los siguinetes comandos:
 
-``` mkadir holo_prueba```
+```sh
+ $ mkadir holo_prueba```
